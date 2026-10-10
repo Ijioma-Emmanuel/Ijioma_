@@ -27,15 +27,26 @@ for (let i = 0; i < cards.length; i++) {
 }
 
 
-var icons = $(".icon-makeup");
+var icons = $(".icon-makeup, .ejs-icon");
 
 for(i=0; i < icons.length; i++){
   icons[i].addEventListener("mouseenter", function(){
 
     this.style.color= "#5EEAD4"
+    
   });
 
   icons[i].addEventListener("mouseleave", function(){
     this.style.color="#64748b"
   })
 }
+
+var ejs = $(".ejs-icon-container");
+
+ejs.on("mouseenter", function () {
+    this.style.filter = "brightness(0) saturate(100%) invert(81%) sepia(28%) saturate(1014%) hue-rotate(113deg) brightness(94%) contrast(89%)";
+});
+
+ejs.on("mouseleave", function () {
+    this.style.filter = "brightness(0) saturate(100%) invert(57%) sepia(12%) saturate(600%) hue-rotate(180deg) brightness(91%) contrast(88%)";
+});
